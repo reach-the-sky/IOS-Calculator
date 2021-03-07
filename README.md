@@ -1,4 +1,4 @@
-<h1>IOS Calculator <img src="http://img.deusm.com/informationweek/2015/09/1322066/Swift_logo.png" width="100"/>  &nbsp; <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/uh59Wh0/calculator-office-animation-with-transparent-background_vjoslko_thumbnail-1080_10.png" style= "width:150px;height:100px" /></h1>
+<h1>IOS Calculator <img src="http://img.deusm.com/informationweek/2015/09/1322066/Swift_logo.png" width="100"/>  &nbsp; <img src="https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/uh59Wh0/calculator-office-animation-with-transparent-background_vjoslko_thumbnail-1080_10.png" width ="150" height="100px" /></h1>
 
 ---
 

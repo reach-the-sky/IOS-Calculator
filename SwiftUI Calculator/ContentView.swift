@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 enum CalculationButton: String{
     
@@ -186,13 +187,13 @@ struct ContentView: View {
     ]
     var body: some View {
         ZStack(alignment: .bottom){
-//            Color.black
+            Color.black
             VStack(spacing: 12){
-                Spacer()
+//                Spacer()
                 HStack {
                     Spacer()
                     Text(env.display)
-//                        .foregroundColor(.white)
+                        .foregroundColor(.white)
                         .font(.system(size: 60))
                 }
                 .padding()
@@ -222,6 +223,7 @@ struct calculatorButtonView: View{
     var body: some View{
         Button(action: {
             env.calculate(button)
+            AudioServicesPlaySystemSound(1306)
         }, label: {
             Text(button.rawValue)
                 .font(.system(size: 32))

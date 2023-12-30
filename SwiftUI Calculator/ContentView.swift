@@ -8,33 +8,15 @@
 import SwiftUI
 import AVFoundation
 
-enum CalculationButton: String{
-    
-    case one = "1",two = "2",four = "4",five = "5",seven = "7" ,eight = "8",nine = "9",six = "6",three = "3",zero = "0",dot = "."
-    case multiply = "x",subtract = "-",addition = "+",equal = "=",divide = "÷"
-    case ac = "AC",plusMinus = "±",c = "C"    // percent = "%"
-    case None
-    
-    var backgroundColor: Color{
-        switch self {
-        case .one, .two, .four, .five, .seven, .eight, .nine, .six, .three, .zero, .dot:
-            return Color(.darkGray)
-        case .multiply, .subtract, .addition, .equal, .divide:
-            return Color(.orange)
-        default:
-            return Color(.lightGray)
-        }
-    }
-}
 
 class GlobalEnvironment: ObservableObject{
     
     @Published var display = "0"
     var storeValue = ""
     var secondaryStoreValue = ""
-    var storeOperator:CalculationButton = .None
-    var secondaryStoreOperator:CalculationButton = .None
-    func calculate(_ value: CalculationButton){
+    var storeOperator:CalcButton = .None
+    var secondaryStoreOperator:CalcButton = .None
+    func calculate(_ value: CalcButton){
         switch value {
         case .one, .two, .four, .five, .seven, .eight, .nine, .six, .three:
             if self.display != "0"{
@@ -178,7 +160,7 @@ class GlobalEnvironment: ObservableObject{
 struct ContentView: View {
     
     @EnvironmentObject var env: GlobalEnvironment
-    let buttons: [[CalculationButton]] = [
+    let buttons: [[CalcButton]] = [
         [.ac,.c,.plusMinus,.divide],
         [.seven,.eight,.nine,.multiply],
         [.four,.five,.six,.addition],
@@ -217,7 +199,7 @@ struct ContentView: View {
 
 struct calculatorButtonView: View{
     
-    let button: CalculationButton
+    let button: CalcButton
     @EnvironmentObject var env: GlobalEnvironment
     
     var body: some View{
@@ -234,7 +216,7 @@ struct calculatorButtonView: View{
         })
     }
     
-    private func buttonWidth(_ button: CalculationButton) -> CGFloat{
+    private func buttonWidth(_ button: CalcButton) -> CGFloat{
         
         var size: CGFloat {
             switch button{

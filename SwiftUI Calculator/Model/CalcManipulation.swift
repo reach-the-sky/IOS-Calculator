@@ -124,7 +124,8 @@ class CalcManipulation: ObservableObject {
                 self.op = .None
 
             default:
-                self.display = "0"
+                self.runningTotal = 0.0
+                self.op = .None
             }
             
             

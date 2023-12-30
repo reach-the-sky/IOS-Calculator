@@ -8,13 +8,22 @@
 import AVFoundation
 import SwiftUI
 
+extension String
+{
+    var floatValue: Float {
+        return (self as NSString).floatValue
+    }
+}
+
 class CalcManipulation: ObservableObject {
     // display amount on screen
     @Published var display: String = "0"
     // running total
     var runningTotal: Float = 0.0
     // operator
-    var op : String = ""
+    var op : CalcButton = .None
+    // current number
+    var currrentNumber: Float = 0.0
     
     // calculate method
     func calculate(_ value : CalcButton)
@@ -40,6 +49,53 @@ class CalcManipulation: ObservableObject {
             if self.display != "0"{
                 self.display += value.rawValue
             }
+        
+        // OPERATORS
+            
+        case .addition:
+            self.runningTotal += self.display.floatValue
+            self.display = "0"
+            self.op = value
+        case.subtract:
+            if self.op == .None{
+                self.runningTotal += self.display.floatValue
+            }
+            else{
+                self.runningTotal -= self.display.floatValue
+            }
+            self.display = "0"
+            self.op = value
+        
+        
+        case.equal:
+            switch self.op{
+            case .addition:
+                self.runningTotal += self.display.floatValue
+                self.display = "\(self.runningTotal)"
+                self.runningTotal = 0.0
+                self.op = .None
+            case.subtract:
+                self.runningTotal -= self.display.floatValue
+                self.display = "\(self.runningTotal)"
+                self.runningTotal = 0.0
+                self.op = .None
+
+            default:
+                self.display = "0"
+            }
+            
+            
+            
+        // clears the screen
+        case .c:
+            self.display = "0"
+       // clears all memory
+        case .ac:
+            self.display = "0"
+            self.runningTotal = 0.0
+            self.op = .None
+        
+            
         default:
             self.display = "0"
                     

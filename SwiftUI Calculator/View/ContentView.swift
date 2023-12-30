@@ -17,12 +17,11 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .bottom){
             Color.black
-            VStack(spacing: 12){
-                HStack {
-                    Spacer()
+            VStack(spacing: 15){
+                HStack() {
                     Text(env.display)
                         .foregroundColor(.white)
-                        .font(.system(size: 60))
+                        .font(.system(size: 100))
                 }
                 .padding()
                 ButtonRowView()

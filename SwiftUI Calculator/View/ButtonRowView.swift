@@ -10,7 +10,7 @@ import SwiftUI
 struct ButtonRowView: View {
     var body: some View {
         ForEach(buttons, id:\.self) { row in
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 ForEach(row, id:\.self){ button in
                     
                     calculatorButtonView(button: button)

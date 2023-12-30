@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-struct calculatorButtonView: View{
+struct CalculatorButtonView: View{
     
     let button: CalcButton
     @EnvironmentObject var env: CalcManipulation
@@ -20,8 +20,9 @@ struct calculatorButtonView: View{
         }, label: {
             Text(button.rawValue)
                 .font(.system(size: 32))
+                .fontWeight(.bold)
                 .frame(width: self.buttonWidth(button), height: (UIScreen.main.bounds.width - 5 * 12) / 4)
-                .foregroundColor(.white)
+                .foregroundColor(Color.white)
                 .background(button.backgroundColor)
                 .cornerRadius(self.buttonWidth(button))
         })
@@ -44,6 +45,6 @@ struct calculatorButtonView: View{
 
 struct CalculatorButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        calculatorButtonView(button: CalcButton.ac)
+        CalculatorButtonView(button: CalcButton.ac)
     }
 }

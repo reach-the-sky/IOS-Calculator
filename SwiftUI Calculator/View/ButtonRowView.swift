@@ -13,7 +13,7 @@ struct ButtonRowView: View {
             HStack(spacing: 10) {
                 ForEach(row, id:\.self){ button in
                     
-                    calculatorButtonView(button: button)
+                    CalculatorButtonView(button: button)
                 }
             }
         }

@@ -19,9 +19,10 @@ struct ContentView: View {
             Color.black
             VStack(spacing: 15){
                 HStack() {
+                    Spacer()
                     Text(env.display)
                         .foregroundColor(.white)
-                        .font(.system(size: 100))
+                        .font(.system(size: 90))
                 }
                 .padding()
                 ButtonRowView()

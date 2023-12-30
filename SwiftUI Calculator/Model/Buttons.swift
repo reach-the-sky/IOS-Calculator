@@ -8,6 +8,13 @@
 import Foundation
 import SwiftUI
 
+let buttons: [[CalcButton]] = [
+    [.ac,.c,.plusMinus,.divide],
+    [.seven,.eight,.nine,.multiply],
+    [.four,.five,.six,.addition],
+    [.one,.two,.three,.subtract],
+    [.zero,.dot,.equal]]
+
 enum CalcButton: String {
     
     case one = "1",two = "2", three = "3", four = "4", five = "5",

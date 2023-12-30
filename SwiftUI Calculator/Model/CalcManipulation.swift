@@ -49,6 +49,19 @@ class CalcManipulation: ObservableObject {
             if self.display != "0"{
                 self.display += value.rawValue
             }
+            
+        // Extra
+            
+        case .dot:
+            if self.display != "0"{
+                self.display += "."
+            }
+            
+        case .plusMinus:
+            if self.display == "0"{
+                return
+            }
+            self.display = "\(-self.display.floatValue)"
         
         // OPERATORS
             
@@ -56,7 +69,7 @@ class CalcManipulation: ObservableObject {
             self.runningTotal += self.display.floatValue
             self.display = "0"
             self.op = value
-        case.subtract:
+        case .subtract:
             if self.op == .None{
                 self.runningTotal += self.display.floatValue
             }
@@ -65,8 +78,28 @@ class CalcManipulation: ObservableObject {
             }
             self.display = "0"
             self.op = value
+        case .multiply:
+            if self.op == .None{
+                self.runningTotal += self.display.floatValue
+            }
+            else{
+                self.runningTotal = self.runningTotal * self.display.floatValue
+            }
+            self.display = "0"
+            self.op = value
+        case .divide:
+            if self.op == .None{
+                self.runningTotal += self.display.floatValue
+            }
+            else{
+                self.runningTotal /= self.display.floatValue
+            }
+            self.display = "0"
+            self.op = value
         
-        
+            /**
+             Get the most recent display value and carry out it's most recent operation (self.op) then reset the operator and running total
+             */
         case.equal:
             switch self.op{
             case .addition:
@@ -74,8 +107,18 @@ class CalcManipulation: ObservableObject {
                 self.display = "\(self.runningTotal)"
                 self.runningTotal = 0.0
                 self.op = .None
-            case.subtract:
+            case .subtract:
                 self.runningTotal -= self.display.floatValue
+                self.display = "\(self.runningTotal)"
+                self.runningTotal = 0.0
+                self.op = .None
+            case .multiply:
+                self.runningTotal *= self.display.floatValue
+                self.display = "\(self.runningTotal)"
+                self.runningTotal = 0.0
+                self.op = .None
+            case .divide:
+                self.runningTotal /= self.display.floatValue
                 self.display = "\(self.runningTotal)"
                 self.runningTotal = 0.0
                 self.op = .None

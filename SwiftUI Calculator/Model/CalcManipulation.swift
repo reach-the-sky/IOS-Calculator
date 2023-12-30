@@ -9,6 +9,47 @@ import AVFoundation
 import SwiftUI
 
 class CalcManipulation: ObservableObject {
+    // display amount on screen
+    @Published var display: String = "0"
+    // running total
+    var runningTotal: Float = 0.0
+    // operator
+    var op : String = ""
+    
+    // calculate method
+    func calculate(_ value : CalcButton)
+    {
+        switch value
+        {
+        case .one,
+                .two,
+                .three,
+                .four,
+                .five,
+                .six,
+                .seven,
+                .eight,
+                .nine:
+            if self.display == "0"{
+                self.display = value.rawValue
+            }
+            else{
+                self.display += value.rawValue
+            }
+        case .zero:
+            if self.display != "0"{
+                self.display += value.rawValue
+            }
+        default:
+            self.display = "0"
+                    
+            
+        }
+    }
+    
+}
+
+class NewCalcManipulation: ObservableObject {
     // display amount on the screen
     @Published var display: String = "0"
     // value to be stored

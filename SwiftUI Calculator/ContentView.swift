@@ -20,7 +20,7 @@ enum CalculationButton: String{
         case .one, .two, .four, .five, .seven, .eight, .nine, .six, .three, .zero, .dot:
             return Color(.darkGray)
         case .multiply, .subtract, .addition, .equal, .divide:
-            return .orange
+            return Color(.orange)
         default:
             return Color(.lightGray)
         }

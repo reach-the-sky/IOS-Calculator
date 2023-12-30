@@ -14,6 +14,7 @@
 		EA9136952B40743C00995CD5 /* CalcManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9136942B40743C00995CD5 /* CalcManipulation.swift */; };
 		EA91369B2B40809900995CD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91369A2B40809900995CD5 /* ContentView.swift */; };
 		EA91369D2B4080C400995CD5 /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91369C2B4080C400995CD5 /* CalculatorButtonView.swift */; };
+		EA91369F2B40A65500995CD5 /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91369E2B40A65500995CD5 /* ButtonRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EA9136942B40743C00995CD5 /* CalcManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcManipulation.swift; sourceTree = "<group>"; };
 		EA91369A2B40809900995CD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA91369C2B4080C400995CD5 /* CalculatorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
+		EA91369E2B40A65500995CD5 /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				EA91369A2B40809900995CD5 /* ContentView.swift */,
 				EA91369C2B4080C400995CD5 /* CalculatorButtonView.swift */,
+				EA91369E2B40A65500995CD5 /* ButtonRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				EA9136952B40743C00995CD5 /* CalcManipulation.swift in Sources */,
 				EA91369B2B40809900995CD5 /* ContentView.swift in Sources */,
 				57CCE55925F1103A001CC19E /* SwiftUI_CalculatorApp.swift in Sources */,
+				EA91369F2B40A65500995CD5 /* ButtonRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

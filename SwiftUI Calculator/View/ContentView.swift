@@ -25,15 +25,7 @@ struct ContentView: View {
                         .font(.system(size: 60))
                 }
                 .padding()
-                
-                ForEach(buttons, id:\.self) { row in
-                    HStack(spacing: 12) {
-                        ForEach(row, id:\.self){ button in
-                            
-                            calculatorButtonView(button: button)
-                        }
-                    }
-                }
+                ButtonRowView()
             }
             .padding(.bottom)
         }

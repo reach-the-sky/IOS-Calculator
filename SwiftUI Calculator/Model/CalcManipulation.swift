@@ -4,8 +4,7 @@
 //
 //  Created by Michael Odusami on 12/30/23.
 //
-
-import AVFoundation
+import Foundation
 import SwiftUI
 
 extension String
@@ -53,9 +52,7 @@ class CalcManipulation: ObservableObject {
         // Extra
             
         case .dot:
-            if self.display != "0"{
-                self.display += "."
-            }
+            self.display += "."
             
         case .plusMinus:
             if self.display == "0"{
